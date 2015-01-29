@@ -27,8 +27,10 @@ module CloudFrontSigning
           'Signature'     => signature,
           'Key-Pair-Id'   => key_pair_id,
         }
-        unless policy.canned?
+        if policy.canned?
           # shorter URL if canned (no need to include the encoded policy)
+          params['Expires'] = policy.ending
+        else
           params['Policy'] = encoded_policy
         end
         u.query_values = (u.query_values || {}).merge(params)

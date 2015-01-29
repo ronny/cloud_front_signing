@@ -28,6 +28,14 @@ module CloudFrontSigning
       Yajl.dump(object, pretty: false, indent: '')
     end
 
+    def ending
+      @ending ||= begin
+        raise ArgumentError, 'missing :ending option' unless options[:ending]
+        epoch_time(options[:ending])
+      end
+    end
+
+
     private
 
     def conditions
@@ -51,13 +59,6 @@ module CloudFrontSigning
 
     def starting
       @starting ||= epoch_time(options[:starting])
-    end
-
-    def ending
-      @ending ||= begin
-        raise ArgumentError, 'missing :ending option' unless options[:ending]
-        epoch_time(options[:ending])
-      end
     end
 
     def resource
