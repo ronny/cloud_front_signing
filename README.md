@@ -1,3 +1,7 @@
+# STATUS
+
+Use http://docs.aws.amazon.com/sdk-for-ruby/v3/api/Aws/CloudFront/UrlSigner.html instead. I don't plan to maintain this gem any more.
+
 # CloudFrontSigning
 
 Sign [AWS CloudFront] URLs.
