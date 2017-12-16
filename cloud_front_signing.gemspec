@@ -24,5 +24,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", "~> 3.1.0"
 
   spec.add_dependency "addressable", '~> 2.3.6'
-  spec.add_dependency "yajl-ruby", '~> 1.2.1'
+  spec.add_dependency "yajl-ruby", '~> 1.3.1'
 end
